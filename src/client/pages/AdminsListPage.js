@@ -5,7 +5,8 @@ import requireAuth from "./../components/hocs/requireAuth";
 
 const AdminsList = ({ admins, fetchAdmins }) => {
   useEffect(() => {
-    fetchAdmins();
+    if (!window.INITIAL_STATE) fetchAdmins();
+    else delete window.INITIAL_STATE;
   }, []);
 
   function renderAdmins() {

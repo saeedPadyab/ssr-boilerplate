@@ -8,7 +8,7 @@ const config = {
   target: "node",
   // Tell webpack the root file of our
   // server application
-  entry: "./src/index.js",
+  entry: "./src/server.js",
   // Tell webpack where to put output file
   // that is generated
   output: {

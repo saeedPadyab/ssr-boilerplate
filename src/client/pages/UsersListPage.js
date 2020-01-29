@@ -5,7 +5,8 @@ import { Helmet } from "react-helmet";
 
 const UsersList = ({ users, fetchUsers, staticContext = {} }) => {
   useEffect(() => {
-    fetchUsers();
+    if (!window.INITIAL_STATE) fetchUsers();
+    else delete window.INITIAL_STATE;
   }, []);
   function renderUsers() {
     return users.map(user => {
